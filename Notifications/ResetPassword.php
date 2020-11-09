@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxcelos\Auth\Notifications;
+namespace SavageGlobalMarketing\Auth\Notifications;
 
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Carbon;

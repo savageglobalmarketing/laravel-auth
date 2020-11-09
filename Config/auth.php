@@ -1,6 +1,6 @@
 <?php
 
-use Maxcelos\Auth\Models\User;
+use SavageGlobalMarketing\Auth\Models\User;
 
 return [
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxcelos\Auth\Http\Middleware;
+namespace SavageGlobalMarketing\Auth\Http\Middleware;
 
 use App\Http\Middleware\Authenticate;
 use Closure;

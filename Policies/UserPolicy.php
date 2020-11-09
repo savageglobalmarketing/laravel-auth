@@ -1,9 +1,9 @@
 <?php
 
-namespace Maxcelos\Auth\Policies;
+namespace SavageGlobalMarketing\Auth\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Maxcelos\Auth\Models\User;
+use SavageGlobalMarketing\Auth\Models\User;
 
 class UserPolicy
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Maxcelos\Auth\Services\User;
+namespace SavageGlobalMarketing\Auth\Services\User;
 
-use Maxcelos\Foundation\Services\GetService;
-use Maxcelos\Auth\Contracts\UserContract;
+use SavageGlobalMarketing\Foundation\Services\GetService;
+use SavageGlobalMarketing\Auth\Contracts\UserContract;
 
 class GetUserService extends GetService
 {

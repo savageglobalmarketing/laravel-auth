@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxcelos\Auth\Http\Controllers;
+namespace SavageGlobalMarketing\Auth\Http\Controllers;
 
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Http\JsonResponse;

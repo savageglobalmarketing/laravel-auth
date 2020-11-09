@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxcelos\Auth\Models;
+namespace SavageGlobalMarketing\Auth\Models;
 
 use Dyrynda\Database\Casts\EfficientUuid;
 use Dyrynda\Database\Support\GeneratesUuid;
@@ -11,9 +11,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Scout\Searchable;
-use Maxcelos\Auth\Database\Factories\UserFactory;
-use Maxcelos\Auth\Notifications\VerifyEmail;
-use Maxcelos\Auth\Notifications\ResetPassword;
+use SavageGlobalMarketing\Auth\Database\Factories\UserFactory;
+use SavageGlobalMarketing\Auth\Notifications\VerifyEmail;
+use SavageGlobalMarketing\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Traits\HasRoles;
 

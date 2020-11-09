@@ -1,9 +1,9 @@
 <?php
 
-namespace Maxcelos\Auth\Services\User;
+namespace SavageGlobalMarketing\Auth\Services\User;
 
-use Maxcelos\Foundation\Services\CreateService;
-use Maxcelos\Auth\Contracts\UserContract;
+use SavageGlobalMarketing\Foundation\Services\CreateService;
+use SavageGlobalMarketing\Auth\Contracts\UserContract;
 
 class CreateUserService extends CreateService
 {

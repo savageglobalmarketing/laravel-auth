@@ -1,13 +1,13 @@
 <?php
 
-namespace Maxcelos\Auth\Providers;
+namespace SavageGlobalMarketing\Auth\Providers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Laravel\Passport\Passport;
-use Maxcelos\Auth\Http\Middleware\AuthMiddleware;
-use Maxcelos\Auth\Models\User;
+use SavageGlobalMarketing\Auth\Http\Middleware\AuthMiddleware;
+use SavageGlobalMarketing\Auth\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Maxcelos\Foundation\Providers\AuthServiceProvider as ServiceProvider;
+use SavageGlobalMarketing\Foundation\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {

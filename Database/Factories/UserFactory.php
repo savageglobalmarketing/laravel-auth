@@ -1,11 +1,11 @@
 <?php
 
-namespace Maxcelos\Auth\Database\Factories;
+namespace SavageGlobalMarketing\Auth\Database\Factories;
 
 use Faker\Provider\Uuid;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Maxcelos\Auth\Models\User;
+use SavageGlobalMarketing\Auth\Models\User;
 
 class UserFactory extends Factory
 {

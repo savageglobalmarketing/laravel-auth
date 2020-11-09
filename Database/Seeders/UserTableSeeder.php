@@ -1,8 +1,8 @@
 <?php
 
-namespace Maxcelos\Auth\Database\Seeders;
+namespace SavageGlobalMarketing\Auth\Database\Seeders;
 
-use Maxcelos\Auth\Models\User;
+use SavageGlobalMarketing\Auth\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Maxcelos\Auth\Services\User;
+namespace SavageGlobalMarketing\Auth\Services\User;
 
-use Maxcelos\Foundation\Services\UpdateService;
-use Maxcelos\Auth\Contracts\UserContract;
+use SavageGlobalMarketing\Foundation\Services\UpdateService;
+use SavageGlobalMarketing\Auth\Contracts\UserContract;
 
 class UpdateUserService extends UpdateService
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxcelos\Auth\Transformers;
+namespace SavageGlobalMarketing\Auth\Transformers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

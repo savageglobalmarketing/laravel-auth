@@ -1,8 +1,8 @@
 <?php
 
-namespace Maxcelos\Auth\Contracts;
+namespace SavageGlobalMarketing\Auth\Contracts;
 
-use Maxcelos\Foundation\Contracts\FoundationContract as Contract;
+use SavageGlobalMarketing\Foundation\Contracts\FoundationContract as Contract;
 
 interface UserContract extends Contract
 {

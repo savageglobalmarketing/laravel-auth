@@ -1,8 +1,8 @@
 <?php
 
-namespace Maxcelos\Auth\Http\Controllers;
+namespace SavageGlobalMarketing\Auth\Http\Controllers;
 
-use Maxcelos\Auth\Transformers\RoleResource;
+use SavageGlobalMarketing\Auth\Transformers\RoleResource;
 use Nwidart\Modules\Routing\Controller;
 
 class UserController extends Controller

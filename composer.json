@@ -1,16 +1,19 @@
 {
-    "name": "maxcelos/laravel-auth",
+    "name": "savageglobalmarketing/laravel-auth",
     "description": "",
     "authors": [
         {
             "name": "Marcelo Barros da Silva",
-            "email": "maxcelos@outlook.com"
+            "email": "savageglobalmarketing@outlook.com"
         }
     ],
+    "require": {
+        "savageglobalmarketing/foundation": "^1.0"
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Maxcelos\\Auth\\Providers\\AuthServiceProvider"
+                "SavageGlobalMarketing\\Auth\\Providers\\AuthServiceProvider"
             ],
             "aliases": {
 
@@ -19,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Maxcelos\\Auth\\": ""
+            "SavageGlobalMarketing\\Auth\\": ""
         }
     }
 }

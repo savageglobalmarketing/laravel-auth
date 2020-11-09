@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxcelos\Auth\Http\Controllers;
+namespace SavageGlobalMarketing\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
-use Maxcelos\Auth\Models\User;
+use SavageGlobalMarketing\Auth\Models\User;
 
 class AuthController extends Controller
 {

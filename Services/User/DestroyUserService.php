@@ -1,9 +1,9 @@
 <?php
 
-namespace Maxcelos\Auth\Services\User;
+namespace SavageGlobalMarketing\Auth\Services\User;
 
-use Maxcelos\Foundation\Services\DestroyService;
-use Maxcelos\Auth\Contracts\UserContract;
+use SavageGlobalMarketing\Foundation\Services\DestroyService;
+use SavageGlobalMarketing\Auth\Contracts\UserContract;
 
 class DestroyUserService extends DestroyService
 {

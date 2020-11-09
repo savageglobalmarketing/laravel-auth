@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxcelos\Auth\Providers;
+namespace SavageGlobalMarketing\Auth\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $moduleNamespace = 'Maxcelos\Auth\Http\Controllers';
+    protected $moduleNamespace = 'SavageGlobalMarketing\Auth\Http\Controllers';
 
     /**
      * Called before routes are registered.

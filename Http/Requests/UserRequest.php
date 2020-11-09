@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxcelos\Auth\Http\Requests;
+namespace SavageGlobalMarketing\Auth\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

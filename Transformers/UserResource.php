@@ -1,8 +1,8 @@
 <?php
 
-namespace Maxcelos\Auth\Transformers;
+namespace SavageGlobalMarketing\Auth\Transformers;
 
-//use Maxcelos\Acl\Transformers\SimpleRoleResource;
+//use SavageGlobalMarketing\Acl\Transformers\SimpleRoleResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 

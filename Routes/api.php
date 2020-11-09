@@ -16,19 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 // Authenticated routes
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('user', 'UserController@loggedUser')->name('maxcelos.user');
-    Route::get('email/resend', 'VerificationController@resend')->name('maxcelos.verification.resend');
-    Route::post('logout', 'AuthController@revokeToken')->middleware('auth:api')->name('maxcelos.logout');
-    Route::apiResource('users', 'UserController', ['as' => 'maxcelos']);
+    Route::get('user', 'UserController@loggedUser')->name('savageglobalmarketing.user');
+    Route::get('email/resend', 'VerificationController@resend')->name('savageglobalmarketing.verification.resend');
+    Route::post('logout', 'AuthController@revokeToken')->middleware('auth:api')->name('savageglobalmarketing.logout');
+    Route::apiResource('users', 'UserController', ['as' => 'savageglobalmarketing']);
 });
 
 // Open routes
 Route::group(['middleware' => 'api'], function () {
-    Route::post('login', 'AuthController@login')->name('maxcelos.login');
+    Route::post('login', 'AuthController@login')->name('savageglobalmarketing.login');
 
-    Route::get('email/verify', 'VerificationController@show')->name('maxcelos.verification.notice');
-    Route::get('email/verify/{uuid}', 'VerificationController@verify')->name('maxcelos.verification.verify');
+    Route::get('email/verify', 'VerificationController@show')->name('savageglobalmarketing.verification.notice');
+    Route::get('email/verify/{uuid}', 'VerificationController@verify')->name('savageglobalmarketing.verification.verify');
 
-    Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('maxcelos.password.email');
-    Route::post('password/reset', 'ResetPasswordController@reset')->name('maxcelos.password.update');
+    Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('savageglobalmarketing.password.email');
+    Route::post('password/reset', 'ResetPasswordController@reset')->name('savageglobalmarketing.password.update');
 });
