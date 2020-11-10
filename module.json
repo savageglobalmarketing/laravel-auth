@@ -1,6 +1,6 @@
 {
     "name": "Auth",
-    "alias": "auth",
+    "alias": "laravel-auth",
     "description": "",
     "keywords": [],
     "priority": 0,
