@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "savageglobalmarketing/laravel-foundation": "dev-main"
+        "savageglobalmarketing/laravel-foundation": "^1.2"
     },
     "extra": {
         "laravel": {
