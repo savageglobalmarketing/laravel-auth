@@ -3,33 +3,19 @@
 namespace SavageGlobalMarketing\Auth\Providers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
-use Laravel\Passport\Passport;
 use SavageGlobalMarketing\Auth\Http\Middleware\AuthMiddleware;
 use SavageGlobalMarketing\Auth\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use SavageGlobalMarketing\Foundation\Providers\AuthServiceProvider as ServiceProvider;
+use Symfony\Component\Finder\Finder;
 
 class AuthServiceProvider extends ServiceProvider
 {
-    /**
-     * @var array $bindings
-     */
-    public $bindings = [];
+    protected string $moduleName = 'Auth';
 
-    /**
-     * @var array $polices
-     */
-    protected $policies = [];
+    protected string $moduleNameLower = 'auth';
 
-    /**
-     * @var string $moduleName
-     */
-    protected $moduleName = 'Auth';
-
-    /**
-     * @var string $moduleNameLower
-     */
-    protected $moduleNameLower = 'auth';
+    protected string $modulePath = __DIR__ . '/../';
 
     /**
      * Boot the application events.
@@ -42,7 +28,9 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
-        Passport::hashClientSecrets();
+        if (class_exists('Laravel\Passport\Passport')) {
+            \Laravel\Passport\Passport::hashClientSecrets();
+        }
 
         Relation::morphMap([
             'users' => User::class
@@ -61,7 +49,6 @@ class AuthServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
-
         parent::register();
     }
 
@@ -73,17 +60,11 @@ class AuthServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__ . '/../Config/passport.php' => config_path('passport.php'),
-        ], 'config');
-        $this->publishes([
-            __DIR__ . '/../Config/auth.php' => config_path('auth.php'),
+            module_path($this->moduleName, 'Config/config.php') => config_path('sav-auth.php'),
         ], 'config');
 
-        $this->publishes([
-            module_path($this->moduleName, 'Config/config.php') => config_path('max-auth.php'),
-        ], 'config');
         $this->mergeConfigFrom(
-            module_path($this->moduleName, 'Config/config.php'), 'max-auth'
+            module_path($this->moduleName, 'Config/config.php'), 'sav-auth'
         );
     }
 }

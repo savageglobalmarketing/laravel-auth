@@ -45,7 +45,9 @@ class CreateOauthRefreshTokensTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         $this->schema->dropIfExists('oauth_refresh_tokens');
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

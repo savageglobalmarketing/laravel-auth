@@ -3,6 +3,7 @@
 namespace SavageGlobalMarketing\Auth\Notifications;
 
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use Illuminate\Auth\Notifications\VerifyEmail as BaseVerifyEmail;
@@ -20,7 +21,12 @@ class VerifyEmail extends BaseVerifyEmail
         $prefix = trim(config('foundation.frontend.url'), '/') . '/' . trim(config('foundation.frontend.email_verify_url'), '/') . '/';
 
         $temporarySignedURL = URL::temporarySignedRoute(
-            'verification.verify', Carbon::now()->addMinutes(60), ['uuid' => $notifiable->uuid], false
+            'verification.verify',
+            Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
+            [
+                'uuid' => $notifiable->uuid,
+                'hash' => sha1($notifiable->getEmailForVerification()),
+            ]
         );
 
         $info = trim(Str::replaceFirst(config('foundation.api.prefix') . '/auth/email/verify', '', $temporarySignedURL), '/');

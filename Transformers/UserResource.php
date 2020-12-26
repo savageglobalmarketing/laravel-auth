@@ -20,10 +20,10 @@ class UserResource extends JsonResource
 			'uuid' => $this->uuid,
 			'name' => $this->name,
 			'email' => $this->email,
-			'is_admin' => $this->is_admin,
-			'is_accountant' => $this->is_accountant,
-            'tokens' => TokenResource::collection($this->tokens)
-            //'roles' => SimpleRoleResource::collection($this->roles)
+			'email_verified_at' => $this->email_verified_at,
+            // 'tokens' => TokenResource::collection($this->tokens)
+            // 'roles' => SimpleRoleResource::collection($this->roles)
+            // 'permissions' =>
 		];
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use SavageGlobalMarketing\Auth\Models\User;
+use SavageGlobalMarketing\Auth\Services\Auth\LoginService;
 
 class AuthController extends Controller
 {
@@ -35,17 +36,10 @@ class AuthController extends Controller
         if ($user && Hash::check($request->password, $user->password)) {
             $this->clearLoginAttempts($request);
 
-            $tokenName = $request->header('user-agent') ?? 'no_user_agent';
+            $agent = $request->header('user-agent') ?? 'no_user_agent';
+            $cookieLogin = $request->cookie_login;
 
-            $token = $user->createToken($tokenName)->accessToken;
-
-            if ($request->cookie_login === false) {
-                return response()->json(['token' => $token], 200);
-            } else {
-                return response()->json('success', 200)->withCookie(
-                    Cookie::make(config('max-auth.token_name'), $token)
-                );
-            }
+            return app(LoginService::class)->run($user, $agent, $cookieLogin);
         } else {
             $this->incrementLoginAttempts($request);
         }
@@ -98,7 +92,7 @@ class AuthController extends Controller
             $request->user()->token()->delete();
 
             return response()->json('logout success')->withCookie(
-                Cookie::forget(config('max-auth.token_name'))
+                Cookie::forget(config('sav-auth.token_name'))
             );
         }
     }

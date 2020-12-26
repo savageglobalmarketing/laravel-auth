@@ -15,6 +15,7 @@ use SavageGlobalMarketing\Auth\Database\Factories\UserFactory;
 use SavageGlobalMarketing\Auth\Notifications\VerifyEmail;
 use SavageGlobalMarketing\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Hash;
+use SavageGlobalMarketing\Auth\Traits\HasTenants;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -26,8 +27,15 @@ class User extends Authenticatable implements MustVerifyEmail
     use Notifiable;
     use HasRoles;
     use HasFactory;
+    use HasTenants;
 
-    protected $fillable = ['name', 'email', 'password', 'avatar'];
+    protected $table = 'auth_users';
+
+    protected $fillable = ['name', 'email', 'password', 'avatar', 'current_tenant_id'];
+
+    protected $appends = [
+         'current_tenant'
+    ];
 
     protected $dates = ['deleted_at'];
 

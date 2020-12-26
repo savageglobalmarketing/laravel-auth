@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('auth_users', function (Blueprint $table) {
             $table->bigIncrements('id');
             /** @noinspection PhpUndefinedMethodInspection */
             $table->efficientUuid('uuid')->index();
@@ -38,7 +38,7 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('auth_users');
         Schema::enableForeignKeyConstraints();
     }
 }

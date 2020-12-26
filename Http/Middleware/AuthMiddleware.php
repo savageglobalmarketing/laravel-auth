@@ -9,7 +9,7 @@ class AuthMiddleware extends Authenticate
 {
     public function handle($request, Closure $next, ...$guards)
     {
-        $tokenName = config('max-auth.token_name');
+        $tokenName = config('sav-auth.token_name');
 
         if (
             $request->cookie($tokenName) &&

@@ -2,8 +2,8 @@
 
 namespace SavageGlobalMarketing\Auth\Contracts;
 
-use SavageGlobalMarketing\Foundation\Contracts\FoundationContract as Contract;
+use SavageGlobalMarketing\Foundation\Contracts\FoundationContract;
 
-interface UserContract extends Contract
+interface UserContract extends FoundationContract
 {
 }
