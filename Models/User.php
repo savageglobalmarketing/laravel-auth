@@ -48,6 +48,16 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        unset($array['current_tenant']);
+        unset($array['tenancies']);
+
+        return $array;
+    }
+
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::make($value);
